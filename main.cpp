@@ -16,11 +16,11 @@ int main()
 
         // Seleccionar y mostrar los usuarios
         db << "SELECT nombre, apellido, cedula FROM tbl_cliente;" >> [](string nombre, string apellido, int cedula) {
-            std::cout << "nombre: " << nombre << " apellido: " << apellido << " cedula: " << cedula << std::endl;
+            cout << "nombre: " << nombre << " apellido: " << apellido << " cedula: " << cedula << endl;
         };
 
     } catch (sqlite::sqlite_exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
+        cerr << "Error: " << e.what() << endl;
     }
 
     return 0;
