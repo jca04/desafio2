@@ -1,20 +1,9 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#include <sqlite/sqlite3.h>
+#include "sqlite/sqlite_modern_cpp.h"
 
-class Database
-{
-private:
-    sqlite3 *db;
-public:
-    Database(const char *filename); // Constructor que toma el nombre del archivo de la base de datos
-
-    ~Database(); // Destructor que cierra la base de datos
-
-    bool openDatabase(const char *filename);
-
-    void closeDatabase();
-};
+// Variable global para la db
+extern sqlite::database db;
 
 #endif // DATABASE_H
